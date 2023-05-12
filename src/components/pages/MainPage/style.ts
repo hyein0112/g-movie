@@ -8,7 +8,9 @@ export const Container = styled.div`
   padding-top: 30px;
 `;
 
-export const UserLogo = styled.div`
+export const UserButton = styled.button`
   position: absolute;
-  right: 30px;
+  right: 5vw;
+  background: none;
+  border: none;
 `;
