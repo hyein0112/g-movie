@@ -66,3 +66,27 @@ export const LogoutButton = styled.button`
   align-self: center;
   border-radius: 5px;
 `;
+
+export const MovieBox = styled.div`
+  align-self: start;
+  margin: 10.34vh 0 0 6.4vw;
+`;
+
+export const MyLikeMovie = styled.div`
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+`;
+
+export const PosterContainer = styled.div`
+  overflow: scroll;
+  display: flex;
+  width: 95.6vw;
+`;
+
+export const MoviePoster = styled.div`
+  min-width: 95px;
+  height: 134px;
+  background: #d9d9d9;
+  margin: 21px 16px 10px 0;
+`;
