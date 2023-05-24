@@ -6,6 +6,7 @@ function App() {
     <Routes>
       <Route path="/" element={<P.Main />} />
       <Route path="/my" element={<P.My />} />
+      <Route path="/signup" element={<P.Signup />} />
     </Routes>
   );
 }
