@@ -62,7 +62,6 @@ export const LogoutButton = styled.button`
   border: 0.5px solid #ea4141;
   font-weight: 500;
   font-size: 10px;
-  color: #ea4141;
   align-self: center;
   border-radius: 5px;
 `;
@@ -82,11 +81,29 @@ export const PosterContainer = styled.div`
   overflow: scroll;
   display: flex;
   width: 95.6vw;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
-export const MoviePoster = styled.div`
+export const MovieContainer = styled.div`
+  width: 95px;
+  displey: flex;
+  margin: 21px 16px 0 0;
+  flex-direction: column;
+`;
+
+export const MoviePoster = styled.img`
   min-width: 95px;
   height: 134px;
   background: #d9d9d9;
-  margin: 21px 16px 10px 0;
+  border-radius: 5px;
+`;
+
+export const MovieName = styled.div`
+  width: 95px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  padding-top: 5px;
 `;
