@@ -21,7 +21,7 @@ export const Input = styled.input`
   border-bottom: 1px solid #b7c7e8;
   background: none;
   font-size: 12px;
-  padding: 32px 0 7px 2px;
+  padding: 33px 0 10px 2px;
 
   &:focus {
     border-bottom: 1px solid #6886c5;
