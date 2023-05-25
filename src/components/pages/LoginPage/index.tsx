@@ -10,15 +10,13 @@ const LoginPage = () => {
       <S.InputBox>
         <S.Input spellCheck="false" placeholder="이메일을 입력하세요." />
         <S.Input spellCheck="false" placeholder="비밀번호를 입력하세요." />
-
-        <S.ForgetPW>
-          <Link to="/signup" style={{ color: "#9a9a9a" }}>
-            앗! 비밀번호를 잊으셨나요?
-          </Link>
-        </S.ForgetPW>
+        <S.ForgetPW>앗! 비밀번호를 잊으셨나요?</S.ForgetPW>
       </S.InputBox>
       <Link to="/">
         <S.LoginButton>로그인</S.LoginButton>
+      </Link>
+      <Link to="/signup" style={{ color: "#9a9a9a" }}>
+        <S.MoveSignupButton>회원가입</S.MoveSignupButton>
       </Link>
     </S.Container>
   );

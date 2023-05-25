@@ -29,15 +29,19 @@ export const Input = styled.input`
   }
 `;
 
-export const ForgetPW = styled.button`
-  align-self: end;
-  padding: 9px 0 0 5px;
+const SideButton = styled.button`
   background: none;
   border: none;
   font-weight: 400;
   font-size: 9px;
   text-decoration-line: underline;
   color: #9a9a9a;
+  cursor: pointer;
+`;
+
+export const ForgetPW = styled(SideButton)`
+  align-self: end;
+  padding: 9px 0 0 5px;
 `;
 
 export const LoginButton = styled.button`
@@ -54,4 +58,8 @@ export const LoginButton = styled.button`
   &:active {
     filter: brightness(90%);
   }
+`;
+
+export const MoveSignupButton = styled(SideButton)`
+  padding-top: 18px;
 `;
