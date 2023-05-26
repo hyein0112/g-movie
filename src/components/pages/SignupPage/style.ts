@@ -44,3 +44,14 @@ export const SignupButton = styled.button`
     filter: brightness(90%);
   }
 `;
+
+export const MoveLoginButton = styled.button`
+  background: none;
+  border: none;
+  font-weight: 400;
+  font-size: 9px;
+  text-decoration-line: underline;
+  color: #9a9a9a;
+  cursor: pointer;
+  padding-top: 18px;
+`;

@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as S from "./style";
 import * as I from "../../../assets";
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 
 const SignupPage = () => {
   const { register, handleSubmit } = useForm();
@@ -43,6 +42,7 @@ const SignupPage = () => {
         </S.InputBox>
         <S.SignupButton>회원가입</S.SignupButton>
       </form>
+      <S.MoveLoginButton>로그인</S.MoveLoginButton>
     </S.Container>
   );
 };
