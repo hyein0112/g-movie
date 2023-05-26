@@ -95,6 +95,7 @@ export const MovieContainer = styled.div`
 
 export const MoviePoster = styled.img`
   min-width: 95px;
+  width: 95px;
   height: 134px;
   background: #d9d9d9;
   border-radius: 5px;
