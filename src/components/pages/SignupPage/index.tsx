@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import * as S from "./style";
 import * as I from "../../../assets";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const SignupPage = () => {
   const { register, handleSubmit } = useForm();
@@ -13,7 +14,7 @@ const SignupPage = () => {
       await customAxios.post("/api/user/signup", {
         ...data,
       });
-      window.location = "/login";
+      window.location.pathname = "/login";
     } catch (e: any) {
       e?.response.status === 500 && alert("이미 가입된 회원입니다.");
     }
@@ -42,7 +43,9 @@ const SignupPage = () => {
         </S.InputBox>
         <S.SignupButton>회원가입</S.SignupButton>
       </form>
-      <S.MoveLoginButton>로그인</S.MoveLoginButton>
+      <Link to="/login">
+        <S.MoveLoginButton>로그인</S.MoveLoginButton>
+      </Link>
     </S.Container>
   );
 };
