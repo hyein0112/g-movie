@@ -9,7 +9,6 @@ const SignupPage = () => {
   const customAxios = axios.create({});
 
   const handleSubmitData = async (data: any) => {
-    console.log(data);
     try {
       await customAxios.post("/api/user/signup", {
         ...data,

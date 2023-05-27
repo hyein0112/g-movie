@@ -8,7 +8,6 @@ const LoginPage = () => {
   const { register, handleSubmit } = useForm();
 
   const handleSubmitData = async (data: any) => {
-    console.log(data);
     try {
       await axios.post("/api/user/signin", {
         ...data,
