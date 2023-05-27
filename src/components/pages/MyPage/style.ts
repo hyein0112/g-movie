@@ -71,7 +71,7 @@ export const MovieBox = styled.div`
   margin: 10.34vh 0 0 6.4vw;
 `;
 
-export const MyLikeMovie = styled.div`
+export const MyLikeMovie = styled.span`
   font-weight: 600;
   font-size: 15px;
   line-height: 18px;
@@ -80,7 +80,7 @@ export const MyLikeMovie = styled.div`
 export const PosterContainer = styled.div`
   overflow: scroll;
   display: flex;
-  width: 95.6vw;
+  width: 93.3vw;
   &::-webkit-scrollbar {
     display: none;
   }
