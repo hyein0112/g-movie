@@ -1,9 +1,15 @@
 import { useParams } from "react-router-dom";
 import * as S from "./style";
+import * as I from "../../../assets";
 
-const MyPage = () => {
+const DetailPage = () => {
   const { movieID } = useParams();
-  return <div>detail {movieID}</div>;
+  return (
+    <S.Container>
+      <I.Logo />
+      <>detail {movieID}</>
+    </S.Container>
+  );
 };
 
-export default MyPage;
+export default DetailPage;
