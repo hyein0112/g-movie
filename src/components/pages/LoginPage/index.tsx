@@ -9,9 +9,10 @@ const LoginPage = () => {
 
   const handleSubmitData = async (data: any) => {
     try {
-      await axios.post("/api/user/signin", {
+      const res = await axios.post("/api/user/signin", {
         ...data,
       });
+      localStorage.setItem("uuid", res.data.userUUID);
       window.location.pathname = "/";
     } catch (e: any) {
       console.log(e);
