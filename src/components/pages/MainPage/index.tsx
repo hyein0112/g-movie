@@ -18,6 +18,10 @@ const MainPage = () => {
     getMovie();
   }, []);
 
+  const onMovieClick = (movieID: any) => {
+    window.location.pathname = `/detail/${movieID}`;
+  };
+
   return (
     <S.Container>
       <I.Logo />
@@ -28,7 +32,10 @@ const MainPage = () => {
       </S.UserButton>
       <S.MovieBox>
         {movies?.map((movie) => (
-          <S.MovieContainer key={movie.id}>
+          <S.MovieContainer
+            onClick={() => onMovieClick(movie.id)}
+            key={movie.id}
+          >
             <S.MoviePoster src={movie.posterImg} />
             <S.MovieName>{movie.title}</S.MovieName>
           </S.MovieContainer>
