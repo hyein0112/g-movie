@@ -31,14 +31,18 @@ const MyPage = () => {
           <S.UserInfoBox>
             <I.MyUser />
             <S.TextBox>
-              <S.UserName>{user.name}</S.UserName>
+              <S.UserName>
+                {JSON.stringify(user) === "{}"
+                  ? "로그인이 필요한 서비스입니다."
+                  : user.name}
+              </S.UserName>
               <S.UserEmail>{user.userId}</S.UserEmail>
             </S.TextBox>
           </S.UserInfoBox>
 
           <S.LogoutButton onClick={() => localStorage.removeItem("uuid")}>
             <Link to="/login" style={{ color: "#ea4141" }}>
-              로그아웃
+              {JSON.stringify(user) === "{}" ? "로그인" : "로그아웃"}
             </Link>
           </S.LogoutButton>
         </S.UserContainer>
