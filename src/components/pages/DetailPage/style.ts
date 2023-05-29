@@ -55,4 +55,5 @@ export const Contour = styled.div`
 export const Description = styled(Text)`
   font-size: 10px;
   line-height: 200%;
+  margin-bottom: 30px;
 `;
