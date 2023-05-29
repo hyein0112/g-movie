@@ -1,26 +1,37 @@
 import { useParams } from "react-router-dom";
 import * as S from "./style";
 import * as I from "../../../assets";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const DetailPage = () => {
   const { movieID } = useParams();
+  const [movie, setMovie] = useState({});
+  useEffect(() => {
+    async function getMovie() {
+      try {
+        const data = await axios.get(`/api/movie/${movieID}`);
+        console.log(data.data);
+        setMovie(data.data);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    getMovie();
+  }, []);
+
   return (
     <S.Container>
       <I.Logo />
-      <S.Poster />
+      <S.Poster src={movie.posterImg} />
       <S.LikeBox>
-        <I.EmptyLike />5
+        <I.EmptyLike />
+        {movie.likes}
       </S.LikeBox>
-      <S.Title>영화제목</S.Title>
-      <S.OpeningDate>2023.03.13</S.OpeningDate>
+      <S.Title>{movie.title}</S.Title>
+      <S.OpeningDate>{movie.openingDate}</S.OpeningDate>
       <S.Contour />
-      <S.Description>
-        영화줄거리 영화줄거리 영화줄거리 영화줄거리 영화줄거 리 영화 줄거리
-        영화줄거리 영화줄거리 영화줄거리 영화줄 거리 영화줄거리 영화줄거리
-        영화줄거리 영화줄거리 영화 줄거리 영화줄거리 영화줄거리 영화줄거리
-        영화줄거리 영 화줄거리 영화줄거리 영화줄거리 영화줄거리 영화줄거리
-        영화줄거리 영화줄거리 영화줄거리 영화 줄거리 영화줄거리
-      </S.Description>
+      <S.Description>{movie.description}</S.Description>
     </S.Container>
   );
 };
