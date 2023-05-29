@@ -33,7 +33,6 @@ export const UserContainer = styled.div`
 export const UserInfoBox = styled.div`
   width: 150px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin: 0 auto;
 `;
@@ -41,6 +40,7 @@ export const UserInfoBox = styled.div`
 export const TextBox = styled.div`
   display: flex;
   flex-direction: column;
+  margin-left: 11px;
 `;
 
 export const UserName = styled.span`
