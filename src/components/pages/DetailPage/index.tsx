@@ -11,7 +11,6 @@ const DetailPage = () => {
     async function getMovie() {
       try {
         const data = await axios.get(`/api/movie/${movieID}`);
-        console.log(data.data);
         setMovie(data.data);
       } catch (e) {
         console.log(e);
