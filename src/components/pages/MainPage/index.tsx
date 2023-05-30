@@ -7,7 +7,7 @@ import LikeButton from "../../LikeButton";
 
 const MainPage = () => {
   const [movies, setMovies] = useState<any[]>([]);
-  const [likeMovies, setLikeMovies] = useState([]);
+  const [likeMovies, setLikeMovies] = useState<any[]>([]);
   useEffect(() => {
     axios
       .all([
@@ -23,7 +23,7 @@ const MainPage = () => {
       .catch((e) => {
         console.log(e);
       });
-  }, [likeMovies]);
+  }, []);
 
   const onMovieClick = (movieID: any) => {
     window.location.pathname = `/detail/${movieID}`;

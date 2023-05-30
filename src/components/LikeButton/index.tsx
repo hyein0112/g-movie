@@ -13,7 +13,7 @@ const LikeButton = ({
   const [isLiked, setLiked] = useState(false);
 
   useEffect(() => {
-    likeMovies.map((movie: { id: any }) => {
+    likeMovies?.map((movie: { id: any }) => {
       movie?.id == movieID ? setLiked(true) : setLiked((prev) => prev);
     });
   }, [likeMovies, movieID]);
