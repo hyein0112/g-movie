@@ -39,6 +39,12 @@ export const MoviePoster = styled.img`
   border-radius: 5px;
 `;
 
+export const MovieLikeButton = styled.div`
+  position: absolute;
+  margin: 105px 0 0 68px;
+  cursor: pointer;
+`;
+
 export const MovieName = styled.div`
   width: 90px;
   text-align: center;

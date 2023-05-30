@@ -3,6 +3,7 @@ import * as S from "./style";
 import * as I from "../../../assets";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import LikeButton from "../../LikeButton";
 
 const DetailPage = () => {
   const { movieID } = useParams();
@@ -17,14 +18,14 @@ const DetailPage = () => {
       }
     }
     getMovie();
-  }, []);
+  }, [movie, movieID]);
 
   return (
     <S.Container>
       <I.Logo />
       <S.Poster src={movie.posterImg} />
       <S.LikeBox>
-        <I.EmptyLike />
+        <LikeButton movieID={movieID} />
         {movie.likes}
       </S.LikeBox>
       <S.Title>{movie.title}</S.Title>
