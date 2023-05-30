@@ -37,12 +37,12 @@ const DetailPage = () => {
       <S.Poster src={movie?.posterImg} />
       <S.LikeBox>
         <LikeButton movieID={movieID} likeMovies={likeMovies} />
-        {movie.likes}
+        {movie?.likes}
       </S.LikeBox>
-      <S.Title>{movie.title}</S.Title>
-      <S.OpeningDate>{movie.openingDate}</S.OpeningDate>
+      <S.Title>{movie?.title}</S.Title>
+      <S.OpeningDate>{movie?.openingDate}</S.OpeningDate>
       <S.Contour />
-      <S.Description>{movie.description}</S.Description>
+      <S.Description>{movie?.description}</S.Description>
     </S.Container>
   );
 };

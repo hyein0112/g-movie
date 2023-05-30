@@ -23,7 +23,7 @@ const MainPage = () => {
       .catch((e) => {
         console.log(e);
       });
-  }, []);
+  }, [likeMovies]);
 
   const onMovieClick = (movieID: any) => {
     window.location.pathname = `/detail/${movieID}`;

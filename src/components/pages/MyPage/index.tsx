@@ -37,9 +37,9 @@ const MyPage = () => {
               <S.UserName>
                 {JSON.stringify(user) === "{}"
                   ? "로그인이 필요한 서비스입니다."
-                  : user.name}
+                  : user?.name}
               </S.UserName>
-              <S.UserEmail>{user.userId}</S.UserEmail>
+              <S.UserEmail>{user?.userId}</S.UserEmail>
             </S.TextBox>
           </S.UserInfoBox>
 
