@@ -7,8 +7,8 @@ import LikeButton from "../../LikeButton";
 
 const DetailPage = () => {
   const { movieID } = useParams();
-  const [movie, setMovie] = useState({});
-  const [likeMovies, setLikeMovies] = useState([]);
+  const [movie, setMovie] = useState<any>();
+  const [likeMovies, setLikeMovies] = useState<any[]>([]);
   useEffect(() => {
     axios
       .all([
@@ -34,7 +34,7 @@ const DetailPage = () => {
           <I.User />
         </Link>
       </S.UserButton>
-      <S.Poster src={movie.posterImg} />
+      <S.Poster src={movie?.posterImg} />
       <S.LikeBox>
         <LikeButton movieID={movieID} likeMovies={likeMovies} />
         {movie.likes}

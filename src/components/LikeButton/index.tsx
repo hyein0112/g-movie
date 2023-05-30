@@ -2,13 +2,19 @@ import axios from "axios";
 import { EmptyLike, FillLike } from "../../assets";
 import { useEffect, useState } from "react";
 
-const LikeButton = ({ movieID, likeMovies }) => {
+const LikeButton = ({
+  movieID,
+  likeMovies,
+}: {
+  movieID: any;
+  likeMovies: any;
+}) => {
   const uuid = localStorage.getItem("uuid");
   const [isLiked, setLiked] = useState(false);
 
   useEffect(() => {
-    likeMovies.map((movie) => {
-      movie.id == movieID ? setLiked(true) : setLiked((prev) => prev);
+    likeMovies.map((movie: { id: any }) => {
+      movie?.id == movieID ? setLiked(true) : setLiked((prev) => prev);
     });
   }, [likeMovies, movieID]);
 

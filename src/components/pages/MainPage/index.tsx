@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import LikeButton from "../../LikeButton";
 
 const MainPage = () => {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState<any[]>([]);
   const [likeMovies, setLikeMovies] = useState([]);
   useEffect(() => {
     axios

@@ -6,8 +6,8 @@ import axios from "axios";
 import LikeButton from "../../LikeButton";
 
 const MyPage = () => {
-  const [user, setUser] = useState({});
-  const [movies, setMovies] = useState([]);
+  const [user, setUser] = useState<any>();
+  const [movies, setMovies] = useState<any[]>([]);
   useEffect(() => {
     async function getMovie() {
       try {
