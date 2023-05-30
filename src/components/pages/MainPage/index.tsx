@@ -7,16 +7,22 @@ import LikeButton from "../../LikeButton";
 
 const MainPage = () => {
   const [movies, setMovies] = useState([]);
+  const [likeMovies, setLikeMovies] = useState([]);
   useEffect(() => {
-    async function getMovie() {
-      try {
-        const data = await axios.get("/api/movie");
-        setMovies(data.data);
-      } catch (e) {
+    axios
+      .all([
+        axios.get("/api/movie"),
+        axios.get(`/api/user/info/${localStorage.getItem("uuid")}`),
+      ])
+      .then(
+        axios.spread((movieRes, infoRes) => {
+          setMovies(movieRes.data);
+          setLikeMovies(infoRes.data.likeMovie);
+        })
+      )
+      .catch((e) => {
         console.log(e);
-      }
-    }
-    getMovie();
+      });
   }, []);
 
   const onMovieClick = (movieID: any) => {
@@ -35,7 +41,7 @@ const MainPage = () => {
         {movies?.map((movie) => (
           <div key={movie.id}>
             <S.MovieLikeButton>
-              <LikeButton movieID={movie.id} />
+              <LikeButton movieID={movie.id} likeMovies={likeMovies} />
             </S.MovieLikeButton>
             <S.MovieContainer onClick={() => onMovieClick(movie.id)}>
               <S.MoviePoster src={movie.posterImg} />
