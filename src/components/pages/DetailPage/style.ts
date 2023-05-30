@@ -9,6 +9,13 @@ export const Container = styled.div`
   padding-top: 30px;
 `;
 
+export const UserButton = styled.button`
+  position: absolute;
+  right: 5vw;
+  background: none;
+  border: none;
+`;
+
 export const Poster = styled.img`
   width: 232px;
   height: 328px;

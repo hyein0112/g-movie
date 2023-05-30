@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import * as S from "./style";
 import * as I from "../../../assets";
 import axios from "axios";
@@ -29,6 +29,11 @@ const DetailPage = () => {
   return (
     <S.Container>
       <I.Logo />
+      <S.UserButton>
+        <Link to="/my">
+          <I.User />
+        </Link>
+      </S.UserButton>
       <S.Poster src={movie.posterImg} />
       <S.LikeBox>
         <LikeButton movieID={movieID} likeMovies={likeMovies} />
