@@ -3,6 +3,7 @@ import * as I from "../../../assets";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import LikeButton from "../../LikeButton";
 
 const MyPage = () => {
   const [user, setUser] = useState({});
@@ -20,8 +21,10 @@ const MyPage = () => {
       }
     }
     getMovie();
-  }, []);
-
+  }, [user]);
+  const onMovieClick = (movieID: any) => {
+    window.location.pathname = `/detail/${movieID}`;
+  };
   return (
     <S.Container>
       <I.Logo />
@@ -57,10 +60,15 @@ const MyPage = () => {
         <div>
           <S.PosterContainer>
             {movies?.map((movie) => (
-              <S.MovieContainer key={movie.id}>
-                <S.MoviePoster src={movie.posterImg} />
-                <S.MovieName>{movie.title}</S.MovieName>
-              </S.MovieContainer>
+              <div key={movie.id}>
+                <S.MovieLikeButton>
+                  <LikeButton movieID={movie.id} likeMovies={movies} />
+                </S.MovieLikeButton>
+                <S.MovieContainer onClick={() => onMovieClick(movie.id)}>
+                  <S.MoviePoster src={movie.posterImg} />
+                  <S.MovieName>{movie.title}</S.MovieName>
+                </S.MovieContainer>
+              </div>
             ))}
           </S.PosterContainer>
         </div>

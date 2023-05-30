@@ -86,6 +86,12 @@ export const PosterContainer = styled.div`
   }
 `;
 
+export const MovieLikeButton = styled.div`
+  position: absolute;
+  margin: 134px 0 0 73px;
+  cursor: pointer;
+`;
+
 export const MovieContainer = styled.div`
   width: 95px;
   displey: flex;
