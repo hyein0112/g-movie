@@ -6,14 +6,12 @@ import { useEffect, useState } from "react";
 import LikeButton from "../../LikeButton";
 
 const MainPage = () => {
+  const uuid = localStorage.getItem("uuid");
   const [movies, setMovies] = useState<any[]>([]);
   const [likeMovies, setLikeMovies] = useState<any[]>([]);
   useEffect(() => {
     axios
-      .all([
-        axios.get("/api/movie"),
-        axios.get(`/api/user/info/${localStorage.getItem("uuid")}`),
-      ])
+      .all([axios.get("/api/movie"), axios.get(`/api/user/info/${uuid}`)])
       .then(
         axios.spread((movieRes, infoRes) => {
           setMovies(movieRes.data);
@@ -37,28 +35,32 @@ const MainPage = () => {
           <I.User />
         </Link>
       </S.UserButton>
-      <S.MovieBox>
-        {movies?.map((movie, index) => (
-          <div key={movie.id}>
-            <S.MovieLikeButton>
-              <LikeButton movieID={movie.id} likeMovies={likeMovies} />
-            </S.MovieLikeButton>
-            <S.RankingBox>
-              {index === 0 ? (
-                <I.FirstRank />
-              ) : index === 1 ? (
-                <I.SecondRank />
-              ) : index === 2 ? (
-                <I.ThirdRank />
-              ) : null}
-            </S.RankingBox>
-            <S.MovieContainer onClick={() => onMovieClick(movie.id)}>
-              <S.MoviePoster src={movie.posterImg} />
-              <S.MovieName>{movie.title}</S.MovieName>
-            </S.MovieContainer>
-          </div>
-        ))}
-      </S.MovieBox>
+      {uuid === null ? (
+        <div style={{ marginTop: "35vh" }}>로그인이 필요한 서비스입니다.</div>
+      ) : (
+        <S.MovieBox>
+          {movies?.map((movie, index) => (
+            <div key={movie.id}>
+              <S.MovieLikeButton>
+                <LikeButton movieID={movie.id} likeMovies={likeMovies} />
+              </S.MovieLikeButton>
+              <S.RankingBox>
+                {index === 0 ? (
+                  <I.FirstRank />
+                ) : index === 1 ? (
+                  <I.SecondRank />
+                ) : index === 2 ? (
+                  <I.ThirdRank />
+                ) : null}
+              </S.RankingBox>
+              <S.MovieContainer onClick={() => onMovieClick(movie.id)}>
+                <S.MoviePoster src={movie.posterImg} />
+                <S.MovieName>{movie.title}</S.MovieName>
+              </S.MovieContainer>
+            </div>
+          ))}
+        </S.MovieBox>
+      )}
     </S.Container>
   );
 };

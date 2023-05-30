@@ -6,14 +6,13 @@ import axios from "axios";
 import LikeButton from "../../LikeButton";
 
 const MyPage = () => {
+  const uuid = localStorage.getItem("uuid");
   const [user, setUser] = useState<any>();
   const [movies, setMovies] = useState<any[]>([]);
   useEffect(() => {
     async function getMovie() {
       try {
-        const data = await axios.get(
-          `api/user/info/${localStorage.getItem("uuid")}`
-        );
+        const data = await axios.get(`api/user/info/${uuid}`);
         setUser(data.data);
         setMovies(data.data.likeMovie);
       } catch (e) {
@@ -35,9 +34,7 @@ const MyPage = () => {
             <I.MyUser />
             <S.TextBox>
               <S.UserName>
-                {JSON.stringify(user) === "{}"
-                  ? "로그인이 필요한 서비스입니다."
-                  : user?.name}
+                {uuid === null ? "로그인이 필요한 서비스입니다." : user?.name}
               </S.UserName>
               <S.UserEmail>{user?.userId}</S.UserEmail>
             </S.TextBox>
@@ -45,7 +42,7 @@ const MyPage = () => {
 
           <S.LogoutButton onClick={() => localStorage.removeItem("uuid")}>
             <Link to="/login" style={{ color: "#ea4141" }}>
-              {JSON.stringify(user) === "{}" ? "로그인" : "로그아웃"}
+              {uuid === null ? "로그인" : "로그아웃"}
             </Link>
           </S.LogoutButton>
         </S.UserContainer>
