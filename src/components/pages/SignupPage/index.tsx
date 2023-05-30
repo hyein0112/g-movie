@@ -7,14 +7,17 @@ import { Link } from "react-router-dom";
 const SignupPage = () => {
   const { register, handleSubmit } = useForm();
   const customAxios = axios.create({});
+  const api_proxy =
+    window.location.hostname === "localhost" ? "/api" : "/api_proxy";
 
   const handleSubmitData = async (data: any) => {
     try {
-      await customAxios.post("/api/user/signup", {
+      await customAxios.post(`${api_proxy}/user/signup`, {
         ...data,
       });
       window.location.pathname = "/login";
     } catch (e: any) {
+      console.log(e);
       e?.response.status === 500 && alert("이미 가입된 회원입니다.");
     }
   };
