@@ -38,11 +38,20 @@ const MainPage = () => {
         </Link>
       </S.UserButton>
       <S.MovieBox>
-        {movies?.map((movie) => (
+        {movies?.map((movie, index) => (
           <div key={movie.id}>
             <S.MovieLikeButton>
               <LikeButton movieID={movie.id} likeMovies={likeMovies} />
             </S.MovieLikeButton>
+            <S.RankingBox>
+              {index === 0 ? (
+                <I.FirstRank />
+              ) : index === 1 ? (
+                <I.SecondRank />
+              ) : index === 2 ? (
+                <I.ThirdRank />
+              ) : null}
+            </S.RankingBox>
             <S.MovieContainer onClick={() => onMovieClick(movie.id)}>
               <S.MoviePoster src={movie.posterImg} />
               <S.MovieName>{movie.title}</S.MovieName>

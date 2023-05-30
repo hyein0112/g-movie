@@ -52,3 +52,8 @@ export const MovieName = styled.div`
   font-weight: 600;
   padding-top: 5px;
 `;
+
+export const RankingBox = styled.div`
+  position: absolute;
+  margin: -8px 0 0 -8px;
+`;
