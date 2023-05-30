@@ -63,4 +63,5 @@ export const LoginButton = styled.button`
 
 export const MoveSignupButton = styled(SideButton)`
   padding-top: 18px;
+  font-size: 12px;
 `;

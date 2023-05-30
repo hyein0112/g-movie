@@ -40,7 +40,7 @@ const LoginPage = () => {
         <S.LoginButton>로그인</S.LoginButton>
       </form>
       <Link to="/signup" style={{ color: "#9a9a9a" }}>
-        <S.MoveSignupButton>회원가입</S.MoveSignupButton>
+        <S.MoveSignupButton>아직 회원이 아니신가요?</S.MoveSignupButton>
       </Link>
     </S.Container>
   );

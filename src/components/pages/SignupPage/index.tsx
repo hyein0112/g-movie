@@ -43,7 +43,7 @@ const SignupPage = () => {
         <S.SignupButton>회원가입</S.SignupButton>
       </form>
       <Link to="/login">
-        <S.MoveLoginButton>로그인</S.MoveLoginButton>
+        <S.MoveLoginButton>이미 회원이신가요?</S.MoveLoginButton>
       </Link>
     </S.Container>
   );
