@@ -36,7 +36,14 @@ const MainPage = () => {
         </Link>
       </S.UserButton>
       {uuid === null ? (
-        <div style={{ marginTop: "35vh" }}>로그인이 필요한 서비스입니다.</div>
+        <>
+          <div style={{ marginTop: "35vh" }}>로그인이 필요한 서비스입니다.</div>
+          <S.LoginButton onClick={() => localStorage.removeItem("uuid")}>
+            <Link to="/login" style={{ color: "#ea4141" }}>
+              로그인
+            </Link>
+          </S.LoginButton>
+        </>
       ) : (
         <S.MovieBox>
           {movies?.map((movie, index) => (

@@ -57,3 +57,15 @@ export const RankingBox = styled.div`
   position: absolute;
   margin: -8px 0 0 -8px;
 `;
+
+export const LoginButton = styled.button`
+  width: 60px;
+  height: 20px;
+  background: #fff5f5;
+  border: 0.5px solid #ea4141;
+  font-weight: 500;
+  font-size: 10px;
+  align-self: center;
+  border-radius: 5px;
+  margin-top: 30px;
+`;
