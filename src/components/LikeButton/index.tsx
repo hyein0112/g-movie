@@ -31,7 +31,7 @@ const LikeButton = ({
         }
       );
       setLiked((prev) => !prev);
-      setLike((prev) => !prev);
+      setLike((prev: any) => !prev);
     } catch (e) {
       console.log(e);
     }
