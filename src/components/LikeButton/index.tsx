@@ -9,7 +9,7 @@ const LikeButton = ({
 }: {
   movieID: any;
   likeMovies: any;
-  setLike: any;
+  setLike?: any;
 }) => {
   const uuid = localStorage.getItem("uuid");
   const [isLiked, setLiked] = useState(false);
