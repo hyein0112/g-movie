@@ -5,9 +5,11 @@ import { useEffect, useState } from "react";
 const LikeButton = ({
   movieID,
   likeMovies,
+  setLike,
 }: {
   movieID: any;
   likeMovies: any;
+  setLike: any;
 }) => {
   const uuid = localStorage.getItem("uuid");
   const [isLiked, setLiked] = useState(false);
@@ -29,6 +31,7 @@ const LikeButton = ({
         }
       );
       setLiked((prev) => !prev);
+      setLike((prev) => !prev);
     } catch (e) {
       console.log(e);
     }

@@ -9,6 +9,7 @@ const MainPage = () => {
   const uuid = localStorage.getItem("uuid");
   const [movies, setMovies] = useState<any[]>([]);
   const [likeMovies, setLikeMovies] = useState<any[]>([]);
+  const [liked, setLiked] = useState(false);
   useEffect(() => {
     axios
       .all([
@@ -28,7 +29,7 @@ const MainPage = () => {
       .catch((e) => {
         console.log(e);
       });
-  }, []);
+  }, [liked]);
 
   const onMovieClick = (movieID: any) => {
     window.location.pathname = `/detail/${movieID}`;
@@ -56,7 +57,11 @@ const MainPage = () => {
           {movies?.map((movie, index) => (
             <div key={movie.id}>
               <S.MovieLikeButton>
-                <LikeButton movieID={movie.id} likeMovies={likeMovies} />
+                <LikeButton
+                  movieID={movie.id}
+                  likeMovies={likeMovies}
+                  setLike={setLiked}
+                />
               </S.MovieLikeButton>
               <S.RankingBox>
                 {index === 0 ? (
