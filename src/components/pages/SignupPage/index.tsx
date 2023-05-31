@@ -10,12 +10,9 @@ const SignupPage = () => {
 
   const handleSubmitData = async (data: any) => {
     try {
-      await customAxios.post(
-        `https://port-0-movie-app-server-otjl2cli2nay6y.sel4.cloudtype.app/user/signup`,
-        {
-          ...data,
-        }
-      );
+      await customAxios.post(`${import.meta.env.BASE_URL}/user/signup`, {
+        ...data,
+      });
       window.location.pathname = "/login";
     } catch (e: any) {
       console.log(e);
