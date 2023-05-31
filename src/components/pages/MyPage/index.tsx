@@ -12,7 +12,9 @@ const MyPage = () => {
   useEffect(() => {
     async function getMovie() {
       try {
-        const data = await axios.get(`api/user/info/${uuid}`);
+        const data = await axios.get(
+          `https://port-0-movie-app-server-otjl2cli2nay6y.sel4.cloudtype.app/user/info/${uuid}`
+        );
         setUser(data.data);
         setMovies(data.data.likeMovie);
       } catch (e) {

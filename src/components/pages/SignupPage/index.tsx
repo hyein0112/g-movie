@@ -7,14 +7,15 @@ import { Link } from "react-router-dom";
 const SignupPage = () => {
   const { register, handleSubmit } = useForm();
   const customAxios = axios.create({});
-  const api_proxy =
-    window.location.hostname === "localhost" ? "/api" : "/api_proxy";
 
   const handleSubmitData = async (data: any) => {
     try {
-      await customAxios.post(`${api_proxy}/user/signup`, {
-        ...data,
-      });
+      await customAxios.post(
+        `https://port-0-movie-app-server-otjl2cli2nay6y.sel4.cloudtype.app/user/signup`,
+        {
+          ...data,
+        }
+      );
       window.location.pathname = "/login";
     } catch (e: any) {
       console.log(e);

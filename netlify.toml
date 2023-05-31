@@ -1,5 +1,0 @@
-[[redirects]]
-from = '/api_proxy/*'
-to = 'https://port-0-movie-app-server-otjl2cli2nay6y.sel4.cloudtype.app/:splat'
-status = 200
-force = true

@@ -11,7 +11,14 @@ const MainPage = () => {
   const [likeMovies, setLikeMovies] = useState<any[]>([]);
   useEffect(() => {
     axios
-      .all([axios.get("/api/movie"), axios.get(`/api/user/info/${uuid}`)])
+      .all([
+        axios.get(
+          "https://port-0-movie-app-server-otjl2cli2nay6y.sel4.cloudtype.app/movie"
+        ),
+        axios.get(
+          `https://port-0-movie-app-server-otjl2cli2nay6y.sel4.cloudtype.app/user/info/${uuid}`
+        ),
+      ])
       .then(
         axios.spread((movieRes, infoRes) => {
           setMovies(movieRes.data);
