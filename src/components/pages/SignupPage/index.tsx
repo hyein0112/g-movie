@@ -31,16 +31,19 @@ const SignupPage = () => {
           <S.Input
             spellCheck="false"
             placeholder="이름을 입력하세요."
+            minLength={2}
             {...register("name")}
           />
           <S.Input
             spellCheck="false"
             placeholder="아이디를 입력하세요."
+            minLength={3}
             {...register("id")}
           />
           <S.Input
             spellCheck="false"
             placeholder="비밀번호를 입력하세요."
+            minLength={6}
             {...register("password")}
           />
         </S.InputBox>
