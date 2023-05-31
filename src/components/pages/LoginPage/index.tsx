@@ -9,9 +9,12 @@ const LoginPage = () => {
 
   const handleSubmitData = async (data: any) => {
     try {
-      const res = await axios.post(`${import.meta.env.BASE_URL}/user/signin`, {
-        ...data,
-      });
+      const res = await axios.post(
+        "https://port-0-movie-app-server-otjl2cli2nay6y.sel4.cloudtype.app/user/signin",
+        {
+          ...data,
+        }
+      );
       localStorage.setItem("uuid", res.data.userUUID);
       window.location.pathname = "/";
     } catch (e: any) {

@@ -20,11 +20,14 @@ const LikeButton = ({
 
   const onClickLiked = async () => {
     try {
-      await axios.post(`${import.meta.env.BASE_URL}/movie/likes`, {
-        movieId: movieID,
-        userId: uuid,
-        isChecked: !isLiked,
-      });
+      await axios.post(
+        `https://port-0-movie-app-server-otjl2cli2nay6y.sel4.cloudtype.app/movie/likes`,
+        {
+          movieId: movieID,
+          userId: uuid,
+          isChecked: !isLiked,
+        }
+      );
       setLiked((prev) => !prev);
     } catch (e) {
       console.log(e);

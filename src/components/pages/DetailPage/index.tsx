@@ -12,9 +12,11 @@ const DetailPage = () => {
   useEffect(() => {
     axios
       .all([
-        axios.get(`${import.meta.env.BASE_URL}/movie/${movieID}`),
         axios.get(
-          `${import.meta.env.BASE_URL}/user/info/${localStorage.getItem(
+          `https://port-0-movie-app-server-otjl2cli2nay6y.sel4.cloudtype.app/movie/${movieID}`
+        ),
+        axios.get(
+          `https://port-0-movie-app-server-otjl2cli2nay6y.sel4.cloudtype.app/user/info/${localStorage.getItem(
             "uuid"
           )}`
         ),

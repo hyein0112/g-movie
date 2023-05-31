@@ -13,7 +13,7 @@ const MyPage = () => {
     async function getMovie() {
       try {
         const data = await axios.get(
-          `${import.meta.env.BASE_URL}/user/info/${uuid}`
+          `https://port-0-movie-app-server-otjl2cli2nay6y.sel4.cloudtype.app/user/info/${uuid}`
         );
         setUser(data.data);
         setMovies(data.data.likeMovie);

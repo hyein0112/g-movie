@@ -12,8 +12,12 @@ const MainPage = () => {
   useEffect(() => {
     axios
       .all([
-        axios.get(`${import.meta.env.BASE_URL}/movie`),
-        axios.get(`${import.meta.env.BASE_URL}/user/info/${uuid}`),
+        axios.get(
+          "https://port-0-movie-app-server-otjl2cli2nay6y.sel4.cloudtype.app/movie"
+        ),
+        axios.get(
+          `https://port-0-movie-app-server-otjl2cli2nay6y.sel4.cloudtype.app/user/info/${uuid}`
+        ),
       ])
       .then(
         axios.spread((movieRes, infoRes) => {
