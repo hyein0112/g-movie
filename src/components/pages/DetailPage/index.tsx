@@ -12,8 +12,14 @@ const DetailPage = () => {
   useEffect(() => {
     axios
       .all([
-        axios.get(`/api/movie/${movieID}`),
-        axios.get(`/api/user/info/${localStorage.getItem("uuid")}`),
+        axios.get(
+          `https://port-0-movie-app-server-otjl2cli2nay6y.sel4.cloudtype.app/movie/${movieID}`
+        ),
+        axios.get(
+          `https://port-0-movie-app-server-otjl2cli2nay6y.sel4.cloudtype.app/user/info/${localStorage.getItem(
+            "uuid"
+          )}`
+        ),
       ])
       .then(
         axios.spread((movieRes, infoRes) => {
