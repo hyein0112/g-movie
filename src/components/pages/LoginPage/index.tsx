@@ -36,6 +36,7 @@ const LoginPage = () => {
             {...register("id")}
           />
           <S.Input
+            type="password"
             spellCheck="false"
             placeholder="비밀번호를 입력하세요."
             {...register("password")}

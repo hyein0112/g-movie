@@ -43,6 +43,7 @@ const SignupPage = () => {
             {...register("id")}
           />
           <S.Input
+            type="password"
             spellCheck="false"
             placeholder="비밀번호를 입력하세요."
             minLength={6}
