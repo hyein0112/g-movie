@@ -7,6 +7,8 @@ import axios from "axios";
 const LoginPage = () => {
   const { register, handleSubmit } = useForm();
 
+  if (localStorage.getItem("uuid") !== null) window.location.pathname = "/";
+
   const handleSubmitData = async (data: any) => {
     try {
       const res = await axios.post(

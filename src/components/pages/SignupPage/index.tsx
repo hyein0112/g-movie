@@ -8,6 +8,8 @@ const SignupPage = () => {
   const { register, handleSubmit } = useForm();
   const customAxios = axios.create({});
 
+  if (localStorage.getItem("uuid") !== null) window.location.pathname = "/";
+
   const handleSubmitData = async (data: any) => {
     try {
       await customAxios.post(

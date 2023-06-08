@@ -22,6 +22,7 @@ const MainPage = () => {
       ])
       .then(
         axios.spread((movieRes, infoRes) => {
+          console.log(movieRes.data);
           setMovies(movieRes.data);
           setLikeMovies(infoRes.data.likeMovie);
         })
