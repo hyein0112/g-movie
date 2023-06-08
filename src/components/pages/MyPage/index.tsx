@@ -60,10 +60,10 @@ const MyPage = () => {
           <S.PosterContainer>
             {movies?.map((movie) => (
               <div key={movie.id}>
-                <S.MovieLikeButton>
-                  <LikeButton movieID={movie.id} likeMovies={movies} />
-                </S.MovieLikeButton>
                 <S.MovieContainer onClick={() => onMovieClick(movie.id)}>
+                  <S.MovieLikeButton>
+                    <LikeButton movieID={movie.id} likeMovies={movies} />
+                  </S.MovieLikeButton>
                   <S.MoviePoster src={movie.posterImg} />
                   <S.MovieName>{movie.title}</S.MovieName>
                 </S.MovieContainer>

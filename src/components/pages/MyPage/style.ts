@@ -78,6 +78,7 @@ export const MyLikeMovie = styled.span`
 `;
 
 export const PosterContainer = styled.div`
+  position: relative;
   overflow: scroll;
   display: flex;
   width: 93.3vw;
@@ -88,7 +89,7 @@ export const PosterContainer = styled.div`
 
 export const MovieLikeButton = styled.div`
   position: absolute;
-  margin: 134px 0 0 73px;
+  margin: 113px 0 0 73px;
   cursor: pointer;
 `;
 
